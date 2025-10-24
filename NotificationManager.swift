@@ -52,7 +52,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = message
-        content.sound = .default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "pushsound.caf"))
         
         // Create trigger with minimal delay (1 second)
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
@@ -84,7 +84,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = message
-        content.sound = .default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: "pushsound.caf"))
         
         // Create trigger with specified delay
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
